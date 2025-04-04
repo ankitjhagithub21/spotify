@@ -61,8 +61,12 @@
 .toggle-btn{
   display: none;
 }
-
-
+.album{
+  width: 75%;
+}
+.album-detail{
+  margin: 10px 0;
+}
 @media (max-width:768px) {
   .sidebar{
     position: fixed;
@@ -83,14 +87,42 @@
   .toggle-btn{
     display: block;
   }
-  /* .player{
-    position: absolute;
-    top: 0;
-    background-color: black;
+  .player{
+    position: sticky;
+    bottom: 0;
+   background-color: black;
     left: 0;
-    height: 100vh;
-    z-index: 10;
-  } */
- 
+    padding: 0;
+    
+  }
+  .player{
+    display: flex;
+   
+  }
+  .album{
+    width: 90%;
+    margin: auto;
+
+   
+  }
+  .album-detail{
+    margin: 0px;
+    
+  }
+  .album-detail h2{
+    line-height: 10px;
+  }
+  .album-top{
+    display:flex;
+    align-items: center;
+    justify-content: start;
+    gap: 5px;
+  }
+  
+  .player img{
+
+    width: 50px;
+  }
+  
   
 }
