@@ -1,15 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { FaRegBookmark } from "react-icons/fa";
+import { FaBookmark, FaRegBookmark } from "react-icons/fa";
 import { FaPlay, FaPause } from "react-icons/fa";
 import { IoPlayBack, IoPlayForward } from "react-icons/io5";
 import { PiSpeakerHighFill } from "react-icons/pi";
 import { useDispatch, useSelector } from 'react-redux';
-import { playNextSong, playPrevSong } from '../app/songSlice';
-
+import { addToFav, playNextSong, playPrevSong, removeFromFav } from '../app/songSlice';
 
 
 const Player = () => {
-    const { currentSongIndex,songs } = useSelector(state => state.song) || {};
+    const { currentSongIndex,songs ,favs} = useSelector(state => state.song) || {};
     const songRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [progress, setProgress] = useState(0);
@@ -104,14 +103,16 @@ const Player = () => {
                 {/* Controls */}
                 <div className='d-flex align-items-center   justify-content-between'>
 
-                    <FaRegBookmark cursor={"pointer"} size={20} />
+                   {
+                        favs.includes(songData.id) ?  <FaBookmark cursor={"pointer"} size={20} onClick={()=>dispatch(removeFromFav(songData.id))}/>  : <FaRegBookmark cursor={"pointer"} size={20} onClick={()=>dispatch(addToFav(songData.id))}/>
+                   }
 
                     <div className='d-flex align-items-center justify-content-center gap-3'>
-                        <IoPlayBack size={25} onClick={()=>dispatch(playPrevSong())} />
+                        <IoPlayBack size={25} cursor={"pointer"} onClick={()=>dispatch(playPrevSong())} />
                         <button className="play-btn" onClick={togglePlayPause} disabled={!songData.musicUrl}>
                             {isPlaying ? <FaPause size={25} /> : <FaPlay size={25} />}
                         </button>
-                        <IoPlayForward size={25} onClick={()=>dispatch(playNextSong())}/>
+                        <IoPlayForward size={25} cursor={"pointer"} onClick={()=>dispatch(playNextSong())}/>
                     </div>
                     <PiSpeakerHighFill size={25} />
                 </div>

@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import songData from "../songs.json";
+import toast from "react-hot-toast";
 
 const initialState = {
   songs: songData,
@@ -18,11 +19,16 @@ export const songSlice = createSlice({
     setIsOpen: (state, action) => {
       state.isOpen = action.payload;
     },
-    addToFav:(state,action) =>{
-      state.favs.push(action.payload)
+    addToFav: (state, action) => {
+     
+      if (!state.favs.includes(action.payload)) {
+        state.favs.push(action.payload);
+        toast.success("Added to favourites.")
+      }
     },
-    removeFromFav:(state,action)=>{
-      state.favs = state.favs.filter((song)=>song.id != action.payload)
+    removeFromFav: (state, action) => {
+      state.favs = state.favs.filter((songId) => songId !== action.payload);
+      toast.success("Remove from favourites.")
     },
     playNextSong: (state) => {
       if (state.currentSongIndex < state.songs.length - 1) {
