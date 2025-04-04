@@ -6,13 +6,20 @@ const initialState = {
   songs: songData,
   currentSongIndex: null,
   isOpen:false,
-  favs:[]
+  favs:[],
+  text:"For You"
 };
 
 export const songSlice = createSlice({
   name: "song",
   initialState,
   reducers: {
+    setSongs: (state, action) => {
+      state.songs = action.payload;
+    },
+    setText: (state, action) => {
+      state.text = action.payload;
+    },
     setCurrentSongIndex: (state, action) => {
       state.currentSongIndex = action.payload;
     },
@@ -48,6 +55,6 @@ export const songSlice = createSlice({
   },
 });
 
-export const { setCurrentSongIndex,setIsOpen ,addToFav,removeFromFav,playNextSong,playPrevSong} = songSlice.actions;
+export const {setSongs,setText, setCurrentSongIndex,setIsOpen ,addToFav,removeFromFav,playNextSong,playPrevSong} = songSlice.actions;
 
 export default songSlice.reducer;
