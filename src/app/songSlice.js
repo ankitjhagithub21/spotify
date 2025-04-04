@@ -3,7 +3,7 @@ import songData from "../songs.json";
 
 const initialState = {
   songs: songData,
-  currentSong: null,
+  currentSongIndex: 0,
   isOpen:false,
   favs:[]
 };
@@ -12,8 +12,8 @@ export const songSlice = createSlice({
   name: "song",
   initialState,
   reducers: {
-    setCurrentSong: (state, action) => {
-      state.currentSong = action.payload;
+    setCurrentSongIndex: (state, action) => {
+      state.currentSongIndex = action.payload;
     },
     setIsOpen: (state, action) => {
       state.isOpen = action.payload;
@@ -23,11 +23,25 @@ export const songSlice = createSlice({
     },
     removeFromFav:(state,action)=>{
       state.favs = state.favs.filter((song)=>song.id != action.payload)
+    },
+    playNextSong: (state) => {
+      if (state.currentSongIndex < state.songs.length - 1) {
+        state.currentSongIndex += 1;
+      } else {
+        state.currentSongIndex = 0; // Loop back to the first song
+      }
+    },
+    playPrevSong: (state) => {
+      if (state.currentSongIndex > 0) {
+        state.currentSongIndex -= 1;
+      } else {
+        state.currentSongIndex = state.songs.length - 1; // Loop back to the last song
+      }
     }
     
   },
 });
 
-export const { setCurrentSong,setIsOpen ,addToFav,removeFromFav} = songSlice.actions;
+export const { setCurrentSongIndex,setIsOpen ,addToFav,removeFromFav,playNextSong,playPrevSong} = songSlice.actions;
 
 export default songSlice.reducer;

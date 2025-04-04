@@ -3,18 +3,19 @@ import { FaRegBookmark } from "react-icons/fa";
 import { FaPlay, FaPause } from "react-icons/fa";
 import { IoPlayBack, IoPlayForward } from "react-icons/io5";
 import { PiSpeakerHighFill } from "react-icons/pi";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { playNextSong, playPrevSong } from '../app/songSlice';
 
 
 
 const Player = () => {
-    const { currentSong } = useSelector(state => state.song) || {};
+    const { currentSongIndex,songs } = useSelector(state => state.song) || {};
     const songRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [progress, setProgress] = useState(0);
-
+    const dispatch = useDispatch();
     // Placeholder data if currentSong is null
-    const songData = currentSong || {
+    const songData = songs[currentSongIndex] || {
         title: "Unknown Song",
         artistName: "Unknown Artist",
         musicUrl: "",
@@ -29,7 +30,7 @@ const Player = () => {
             songRef.current.play();
             setIsPlaying(true);
         }
-    }, [currentSong]);
+    }, [currentSongIndex]);
 
     // Update progress bar as song plays
     useEffect(() => {
@@ -106,11 +107,11 @@ const Player = () => {
                     <FaRegBookmark cursor={"pointer"} size={20} />
 
                     <div className='d-flex align-items-center justify-content-center gap-3'>
-                        <IoPlayBack size={25} />
+                        <IoPlayBack size={25} onClick={()=>dispatch(playPrevSong())} />
                         <button className="play-btn" onClick={togglePlayPause} disabled={!songData.musicUrl}>
                             {isPlaying ? <FaPause size={25} /> : <FaPlay size={25} />}
                         </button>
-                        <IoPlayForward size={25} />
+                        <IoPlayForward size={25} onClick={()=>dispatch(playNextSong())}/>
                     </div>
                     <PiSpeakerHighFill size={25} />
                 </div>

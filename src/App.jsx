@@ -10,7 +10,6 @@ const App = () => {
     <main className="main-container">
       <div className="row">
         <Sidebar />
-        
         <SongList />
         <Player/>
        
