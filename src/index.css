@@ -74,10 +74,23 @@
     transform: translateX(-100%);
     transition: 0.3s;
   }
+  .song-list{
+    padding:0px 20px;
+  }
   .open{
     transform: translateX(0);
   }
   .toggle-btn{
     display: block;
   }
+  /* .player{
+    position: absolute;
+    top: 0;
+    background-color: black;
+    left: 0;
+    height: 100vh;
+    z-index: 10;
+  } */
+ 
+  
 }

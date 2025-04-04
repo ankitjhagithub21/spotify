@@ -65,7 +65,7 @@ const Player = () => {
     };
 
     return (
-        <div className='col-md-4 right-div'>
+        <div className='col-md-4 player'>
             <div className='my-2'>
                 <h2 className='fs-4'>{songData.title}</h2>
                 <small>{songData.artistName}</small>
