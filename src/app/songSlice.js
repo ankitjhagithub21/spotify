@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 
 const initialState = {
   songs: songData,
-  currentSongIndex: 0,
+  currentSongIndex: null,
   isOpen:false,
   favs:[]
 };

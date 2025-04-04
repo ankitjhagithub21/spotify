@@ -15,7 +15,7 @@ const Sidebar = () => {
       <div className="my-3 d-flex flex-column px-3 gap-3">
         {
           ["For You", "Top Tracks", "Favourites", "Recently Played"].map((item, index) => {
-            return <h5 key={index}>{item}</h5>
+            return <h5 onClick={()=>dispatch(setIsOpen(false))} key={index}>{item}</h5>
           })
         }
       </div>
