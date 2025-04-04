@@ -12,7 +12,7 @@ const Player = () => {
     const songRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [progress, setProgress] = useState(0);
-    
+
     // Placeholder data if currentSong is null
     const songData = currentSong || {
         title: "Unknown Song",
@@ -85,7 +85,15 @@ const Player = () => {
 
                 {/* Time Display */}
                 <div className='d-flex align-items-center justify-content-between mb-2'>
-                    {/* <small>{new Date(songRef.current?.currentTime * 1000).toISOString().substr(14, 5)}</small> */}
+                    <small>
+                        {songRef.current && !isNaN(songRef.current.currentTime)
+                            ? `${Math.floor(songRef.current.currentTime / 60)
+                                .toString()
+                                .padStart(2, "0")}:${Math.floor(songRef.current.currentTime % 60)
+                                    .toString()
+                                    .padStart(2, "0")}`
+                            : "00:00"}
+                    </small>
                     <small>{songData.duration}</small>
                 </div>
 
@@ -95,7 +103,7 @@ const Player = () => {
                 {/* Controls */}
                 <div className='d-flex align-items-center   justify-content-between'>
 
-                <FaRegBookmark cursor={"pointer"} />
+                    <FaRegBookmark cursor={"pointer"} size={20} />
 
                     <div className='d-flex align-items-center justify-content-center gap-3'>
                         <IoPlayBack size={25} />
