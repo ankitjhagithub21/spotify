@@ -1,16 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { HiDotsHorizontal } from "react-icons/hi";
+import { FaRegBookmark } from "react-icons/fa";
 import { FaPlay, FaPause } from "react-icons/fa";
 import { IoPlayBack, IoPlayForward } from "react-icons/io5";
 import { PiSpeakerHighFill } from "react-icons/pi";
 import { useSelector } from 'react-redux';
+
+
 
 const Player = () => {
     const { currentSong } = useSelector(state => state.song) || {};
     const songRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [progress, setProgress] = useState(0);
-
+    
     // Placeholder data if currentSong is null
     const songData = currentSong || {
         title: "Unknown Song",
@@ -69,13 +71,13 @@ const Player = () => {
 
 
             <div className='my-2 album'>
-               <div className='album-top'>
-               <img src={songData.thumbnail} alt={songData.title} className='img-fluid rounded mb-2' />
-                <div className='album-detail'>
-                    <h2 className='fs-4'>{songData.title}</h2>
-                    <small>{songData.artistName}</small>
+                <div className='album-top'>
+                    <img src={songData.thumbnail} alt={songData.title} className='img-fluid rounded mb-2' />
+                    <div className='album-detail'>
+                        <h2 className='fs-4'>{songData.title}</h2>
+                        <small>{songData.artistName}</small>
+                    </div>
                 </div>
-               </div>
                 {/* Progress Bar */}
                 <div className="progress-bar-container" onClick={handleProgressClick}>
                     <progress id="file" className='w-100' value={progress} max="100">{progress}%</progress>
@@ -83,7 +85,7 @@ const Player = () => {
 
                 {/* Time Display */}
                 <div className='d-flex align-items-center justify-content-between mb-2'>
-                    <small>0:00</small>
+                    {/* <small>{new Date(songRef.current?.currentTime * 1000).toISOString().substr(14, 5)}</small> */}
                     <small>{songData.duration}</small>
                 </div>
 
@@ -92,7 +94,9 @@ const Player = () => {
 
                 {/* Controls */}
                 <div className='d-flex align-items-center   justify-content-between'>
-                    <HiDotsHorizontal size={20} />
+
+                <FaRegBookmark cursor={"pointer"} />
+
                     <div className='d-flex align-items-center justify-content-center gap-3'>
                         <IoPlayBack size={25} />
                         <button className="play-btn" onClick={togglePlayPause} disabled={!songData.musicUrl}>
