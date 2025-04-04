@@ -38,15 +38,16 @@
 }
 
 .song-list {
-  height: 100vh;
-  overflow-y: scroll;
-  position: relative;
+  height: calc(100vh - 50px); 
+  overflow-y: auto; 
+  padding-bottom: 10px;
 }
 .song-list-top{
     position: sticky;
     top: 0px;
     background-color: black;
     padding: 10px 0px;
+    z-index: 10; /* Ensure it stays above the list */
 }
 .song {
   cursor: pointer;
@@ -79,7 +80,9 @@
     transition: 0.3s;
   }
   .song-list{
-    padding:0px 20px;
+    height: calc(100vh - 100px); /* Adjust height to prevent cutoff */
+    padding: 0px 20px;
+    overflow-y: auto; /* Ensure scrolling is enabled */
   }
   .open{
     transform: translateX(0);
@@ -90,24 +93,19 @@
   .player{
     position: sticky;
     bottom: 0;
-   background-color: black;
+    background-color: black;
     left: 0;
     padding: 0;
-    
+    display: flex;  
   }
-  .player{
-    display: flex;
-   
-  }
+  
+  
   .album{
     width: 90%;
     margin: auto;
-
-   
   }
   .album-detail{
     margin: 0px;
-    
   }
   .album-detail h2{
     line-height: 10px;
@@ -118,11 +116,10 @@
     justify-content: start;
     gap: 5px;
   }
-  
+  .song-list{
+    height: calc(100vh - 200px); 
+  }
   .player img{
-
     width: 50px;
   }
-  
-  
 }
