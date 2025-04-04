@@ -1,0 +1,83 @@
+[
+    {
+      "id":1,
+      "title": "Kesariya",
+      "thumbnail": "https://c.saavncdn.com/191/Kesariya-From-Brahmastra-Hindi-2022-20220717092820-500x500.jpg",
+      "musicUrl": "./kesariya.mp3",
+      "duration": "4:29",
+      "artistName": "Arijit Singh"
+    },
+    {
+      "id":2,
+      "title": "Tum Hi Ho",
+      "thumbnail": "https://c.saavncdn.com/430/Aashiqui-2-Hindi-2013-500x500.jpg",
+      "musicUrl": "./tum-hi-ho.mp3",
+      "duration": "4:22",
+      "artistName": "Arijit Singh"
+    },
+    {
+      "id":3,
+      "title": "Apna Bana Le",
+      "thumbnail": "https://c.saavncdn.com/815/Bhediya-Hindi-2023-20230927155213-500x500.jpg",
+      "musicUrl": "./apna-bana-le.mp3",
+      "duration": "3:59",
+      "artistName": "Arijit Singh"
+    },
+    {
+      "id":4,
+      "title": "Raataan Lambiyan",
+      "thumbnail": "https://c.saavncdn.com/238/Shershaah-Original-Motion-Picture-Soundtrack--Hindi-2021-20210815181610-500x500.jpg",
+      "musicUrl": "./raataan-lambiya.mp3",
+      "duration": "3:50",
+      "artistName": "Jubin Nautiyal, Asees Kaur"
+    },
+    {
+      "id":5,
+      "title": "Tujhe Kitna Chahne Lage",
+      "thumbnail": "https://c.saavncdn.com/807/Kabir-Singh-Hindi-2019-20240131131003-500x500.jpg",
+      "musicUrl": "./tujhe-kitna-chahne.mp3",
+      "duration": "4:45",
+      "artistName": "Arijit Singh"
+    },
+    {
+      "id":6,
+      "title": "Shayad",
+      "thumbnail": "https://c.saavncdn.com/862/Love-Aaj-Kal-Hindi-2020-20200214140423-500x500.jpg",
+      "musicUrl": "./shayad.mp3",
+      "duration": "4:08",
+      "artistName": "Arijit Singh"
+    },
+    {
+      "id":7,
+      "title": "Bekhayali",
+      "thumbnail": "https://c.saavncdn.com/807/Kabir-Singh-Hindi-2019-20240131131003-500x500.jpg",
+      "musicUrl": "./bekhayli.mp3",
+      "duration": "6:11",
+      "artistName": "Sachet Tandon"
+    },
+    {
+      "id":8,
+      "title": "Tera Yaar Hoon Main",
+      "thumbnail": "https://c.saavncdn.com/074/Sonu-Ke-Titu-Ki-Sweety-Hindi-2018-20180214153942-500x500.jpg",
+      "musicUrl": "./tera-yaar-hoon-main.mp3",
+      "duration": "4:23",
+      "artistName": "Arijit Singh"
+    },
+    {
+      "id":9,
+      "title": "Sun Saathiya",
+      "thumbnail": "https://c.saavncdn.com/012/ABCD-2-Hindi-2018-20180516-500x500.jpg",
+      "musicUrl": "./sun-saathiya.mp3",
+      "duration": "3:30",
+      "artistName": "Priya Saraiya, Divya Kumar"
+    },
+    {
+      "id":10,
+      "title": "Ae Dil Hai Mushkil",
+      "thumbnail": "https://c.saavncdn.com/257/Ae-Dil-Hai-Mushkil-Hindi-2016-500x500.jpg",
+      "musicUrl": "./ae-dil-hai-muskil.mp3",
+      "duration": "4:30",
+      "artistName": "Arijit Singh"
+    }
+  ]
+  
