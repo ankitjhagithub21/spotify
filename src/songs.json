@@ -6,7 +6,7 @@
     "musicUrl": "./kesariya.mp3",
     "duration": "4:29",
     "artistName": "Arijit Singh",
-    "backgroundGradient": "linear-gradient(to right, #fcb045, #fd1d1d, #833ab4)"
+    "backgroundGradient": "linear-gradient(135deg, #1e1e1e, #fd1d1d, #833ab4)"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "musicUrl": "./tum-hi-ho.mp3",
     "duration": "4:22",
     "artistName": "Arijit Singh",
-    "backgroundGradient": "linear-gradient(to right, #000046, #1cb5e0)"
+    "backgroundGradient": "linear-gradient(135deg, #1e1e1e, #000046, #1cb5e0)"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "musicUrl": "./apna-bana-le.mp3",
     "duration": "3:59",
     "artistName": "Arijit Singh",
-    "backgroundGradient": "linear-gradient(to right, #00b09b, #96c93d)"
+    "backgroundGradient": "linear-gradient(135deg, #1e1e1e, #00b09b, #96c93d)"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "musicUrl": "./raataan-lambiyan.mp3",
     "duration": "3:50",
     "artistName": "Jubin Nautiyal, Asees Kaur",
-    "backgroundGradient": "linear-gradient(135deg,#1e1e1e, #406272, #E5E0DD)"
+    "backgroundGradient": "linear-gradient(135deg, #1e1e1e, #406272, #E5E0DD)"
   },
   {
     "id": 5,
@@ -51,7 +51,7 @@
     "musicUrl": "./shayad.mp3",
     "duration": "4:08",
     "artistName": "Arijit Singh",
-    "backgroundGradient": "linear-gradient(to right, #1a8cd8, #0a94d1, #4d9a6e, #b55273, #e78a40)"
+    "backgroundGradient": "linear-gradient(135deg, #0a94d1, #4d9a6e, #b55273, #e78a40)"
   },
   {
     "id": 7,
