@@ -1,12 +1,36 @@
-# React + Vite
+# 🎵 Music Player App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and elegant music player built with React that plays your favorite tracks with stylish UI, real-time toast notifications, and dynamic gradient backgrounds that adapt to the song's theme.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔥 Features
 
-## Expanding the ESLint configuration
+- 🎧 Play/Pause music
+- ⏭ Next/Previous song
+- 📀 Song list with thumbnails and info
+- ❤️ Add/Remove songs from favorites
+- 🎨 Dynamic background gradients based on songs
+- 🔊 Custom audio player with full controls
+- 📱 Fully responsive and mobile-friendly
+- ⚡ Toast notifications using `react-hot-toast`
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+- **Frontend:** ReactJS, TailwindCSS
+- **Icons:** FontAwesome / Custom SVGs
+- **Notifications:** react-hot-toast
+- **Styling:** CSS gradients, transitions
+
+## 🖼️ Screenshot
+
+![alt text](image.png)
+
+## 🚀 Getting Started
+
+### 1. Clone the repo
+```bash
+git clone https://github.com/ankitjhagithub21/spotify.git
+cd spotify
+npm install
+npm run dev
+
