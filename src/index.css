@@ -113,12 +113,15 @@
   .player{
     position: fixed;
     bottom: 0;
-    background-color: black;
     left: 0;
     padding: 0;
     display: flex;  
+    
   }
   
+  .songs{
+      height: 68vh;
+  }
   
   .album{
     width: 90%;
