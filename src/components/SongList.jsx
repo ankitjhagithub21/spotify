@@ -24,7 +24,7 @@ const SongList = () => {
   }, [searchTerm, songs]);
 
   return (
-    <div className="song-list col-md-5">
+    <div className="song-list col-md-5 px-3">
       <Searchbar searchTerm={searchTerm} handleChange={handleChange} />
       <div className="songs">
         {filteredSongs.length > 0 ? (

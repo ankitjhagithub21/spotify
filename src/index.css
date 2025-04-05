@@ -40,17 +40,15 @@
   border-radius: 50%;
 }
 
-.song-list {
-  height: calc(100vh - 50px); 
-  overflow-y: auto; 
-  padding-bottom: 10px;
-}
-.song-list-top{
-    position: sticky;
-    top: 0px;
-   
+
+
+.song-list-top{ 
     padding: 10px 0px;
-    z-index: 10; /* Ensure it stays above the list */
+  
+}
+.songs{
+  height: 80vh;
+  overflow-y: scroll;
 }
 .song {
   cursor: pointer;
@@ -93,12 +91,7 @@
     transform: translateX(-100%);
     transition: 0.3s;
   }
-  .song-list{
-    height: calc(100vh - 100px); /* Adjust height to prevent cutoff */
-    padding: 0px 20px;
-    overflow-y: auto; /* Ensure scrolling is enabled */
-
-  }
+  
   
   .open{
     transform: translateX(0);
@@ -132,9 +125,7 @@
     justify-content: start;
     gap: 5px;
   }
-  .song-list{
-    height: calc(100vh - 150px); 
-  }
+ 
   .player img{
     width: 50px;
   }
