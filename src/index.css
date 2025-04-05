@@ -110,17 +110,23 @@
   .toggle-btn{
     display: block;
   }
+  .song-list-top{
+    height: 95px;
+  }
   .player{
     position: fixed;
     bottom: 0;
     left: 0;
     padding: 0;
     display: flex;  
-    
+   
+   
+
+   
   }
   
   .songs{
-      height: 68vh;
+      height: 65vh;
   }
   
   .album{
