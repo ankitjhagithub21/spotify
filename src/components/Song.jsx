@@ -4,10 +4,15 @@ import { setCurrentSongIndex } from "../app/songSlice"
 
 const Song = ({ song,index }) => {
   
-  const {currentSong} = useSelector(state=>state.song) 
+  const {currentSongIndex} = useSelector(state=>state.song) 
   const dispatch = useDispatch()
+
+  const handleSongClick = () => {
+     dispatch(setCurrentSongIndex(index))
+
+  }
   return (
-    <div onClick={()=>dispatch(setCurrentSongIndex(index))} className={`d-flex my-2 song rounded ${currentSong?.id === song.id && 'active-song' } align-items-center justify-content-between p-2`}>
+    <div onClick={handleSongClick} className={`d-flex my-2 song rounded ${currentSongIndex === index && 'active-song' } align-items-center justify-content-between p-2`}>
       <div className="d-flex gap-3 align-items-center">
         <img src={song.thumbnail} alt={song.title} className="thumbnail" />
 

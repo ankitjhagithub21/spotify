@@ -20,7 +20,11 @@
   cursor: pointer;
 }
 .search-bar {
-  background-color: #292219;
+  background-color: rgba(41, 34, 25, 0.7); /* Semi-transparent dark background */
+  border-radius: 10px; /* Optional: adds rounded corners for a soft look */
+  backdrop-filter: blur(10px); /* Adds a blur effect to the background */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
 }
 .search-bar input {
   background: transparent;
@@ -54,12 +58,19 @@
   cursor: pointer;
 }
 .song:hover {
-  background-color: #292219;
+  background-color: rgba(41, 34, 25, 0.7); /* Semi-transparent dark background */
+  border-radius: 10px; /* Optional: adds rounded corners for a soft look */
+  backdrop-filter: blur(10px); /* Adds a blur effect to the background */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
 }
 .active-song {
-  background-color: #292219;
+  background-color: rgba(41, 34, 25, 0.7); /* Semi-transparent dark background */
+  border-radius: 10px; /* Optional: adds rounded corners for a soft look */
+  backdrop-filter: blur(10px); /* Adds a blur effect to the background */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds subtle shadow for depth */
 }
-
 .toggle-btn{
   display: none;
 }
