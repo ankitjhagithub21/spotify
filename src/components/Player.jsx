@@ -104,7 +104,11 @@ const Player = () => {
                 <div className='d-flex align-items-center   justify-content-between'>
 
                    {
-                        favs.includes(songData.id) ?  <FaBookmark cursor={"pointer"} size={20} onClick={()=>dispatch(removeFromFav(songData.id))}/>  : <FaRegBookmark cursor={"pointer"} size={20} onClick={()=>dispatch(addToFav(songData.id))}/>
+                        favs.includes(songData.id) ?  <FaBookmark cursor={"pointer"} size={20} onClick={()=>dispatch(removeFromFav(songData.id))}/>  : <FaRegBookmark cursor={"pointer"} size={20} onClick={()=> {
+                            if(songData.id){
+                                dispatch(addToFav(songData.id))
+                            }
+                        } }/>
                    }
 
                     <div className='d-flex align-items-center justify-content-center gap-3'>

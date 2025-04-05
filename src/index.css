@@ -13,6 +13,8 @@
   position: relative;
   background-color: black;
   color:whitesmoke;
+  transition: 0.5s;
+  
 }
 .sidebar h5{
   cursor: pointer;
@@ -46,7 +48,7 @@
 .song-list-top{
     position: sticky;
     top: 0px;
-    background-color: black;
+   
     padding: 10px 0px;
     z-index: 10; /* Ensure it stays above the list */
 }
