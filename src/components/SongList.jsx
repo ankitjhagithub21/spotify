@@ -1,14 +1,13 @@
-import {  useSelector } from "react-redux";
+
 import Song from "./Song";
 import Searchbar from "./Searchbar";
 import { useEffect, useState } from "react";
 
 
-const SongList = () => {
-  const { songs } = useSelector((state) => state.song);
+const SongList = ({songs}) => {
+ 
   const [filteredSongs, setFilteredSongs] = useState(songs);
   const [searchTerm, setSearchTerm] = useState("");
-
 
   const handleChange = (e) => {
     setSearchTerm(e.target.value);

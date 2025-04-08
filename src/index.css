@@ -3,6 +3,47 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.rhap_container {
+  background: transparent !important;
+}
+
+.rhap_main-controls-button {
+  color: black !important;
+}
+
+
+.rhap_progress-section .rhap_time {
+  color: black;
+ 
+}
+.rhap_repeat-button{
+  display: none;
+  
+  color: black !important;
+}
+.rhap_progress-filled,
+.rhap_progress-indicator {
+  background-color: black !important;
+}
+
+.rhap_button-clear.rhap_volume-button {
+  color: black !important;
+}
+.rhap_volume-bar, .rhap_volume-indicator {
+  background-color: black !important;
+}
+.audio-player{
+  position: relative;
+  /* background-color: blue; */
+}
+.bookmark-button{
+  position: absolute;
+  top: 50px;
+  left: 5px;
+  color: black;
+}
+
 *::-webkit-scrollbar {
   display: none;
 }
@@ -12,31 +53,34 @@
   overflow: hidden;
   position: relative;
   background-color: black;
-  color:whitesmoke;
+  color: whitesmoke;
   transition: 0.5s;
-  
 }
-.sidebar h5{
+.sidebar h5 {
   cursor: pointer;
 }
 .search-bar {
-  background-color: rgba(41, 34, 25, 0.7); /* Semi-transparent dark background */
+  background-color: rgba(
+    41,
+    34,
+    25,
+    0.7
+  ); /* Semi-transparent dark background */
   border-radius: 10px; /* Optional: adds rounded corners for a soft look */
   backdrop-filter: blur(10px); /* Adds a blur effect to the background */
   -webkit-backdrop-filter: blur(10px); /* For Safari support */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 .search-bar input {
   background: transparent;
   border: none;
   outline: none;
-  
 }
-.play-btn{
-    border: none;
-    outline: none;
-    background: transparent;
-    color: whitesmoke;
+.play-btn {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: whitesmoke;
 }
 .thumbnail {
   width: 50px;
@@ -44,13 +88,10 @@
   border-radius: 50%;
 }
 
-
-
-.song-list-top{ 
-    padding: 10px 0px;
-  
+.song-list-top {
+  padding: 10px 0px;
 }
-.songs{
+.songs {
   height: 80vh;
   overflow-y: scroll;
 }
@@ -58,30 +99,40 @@
   cursor: pointer;
 }
 .song:hover {
-  background-color: rgba(41, 34, 25, 0.7); /* Semi-transparent dark background */
+  background-color: rgba(
+    41,
+    34,
+    25,
+    0.7
+  ); /* Semi-transparent dark background */
   border-radius: 10px; /* Optional: adds rounded corners for a soft look */
   backdrop-filter: blur(10px); /* Adds a blur effect to the background */
   -webkit-backdrop-filter: blur(10px); /* For Safari support */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 .active-song {
-  background-color: rgba(41, 34, 25, 0.7); /* Semi-transparent dark background */
+  background-color: rgba(
+    41,
+    34,
+    25,
+    0.7
+  ); /* Semi-transparent dark background */
   border-radius: 10px; /* Optional: adds rounded corners for a soft look */
   backdrop-filter: blur(10px); /* Adds a blur effect to the background */
   -webkit-backdrop-filter: blur(10px); /* For Safari support */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds subtle shadow for depth */
 }
-.toggle-btn{
+.toggle-btn {
   display: none;
 }
-.album{
+.album {
   width: 75%;
 }
-.album-detail{
+.album-detail {
   margin: 10px 0;
 }
 
-.profile-img{
+.profile-img {
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -91,8 +142,8 @@
   left: 10px;
 }
 
-@media (max-width:768px) {
-  .sidebar{
+@media (max-width: 768px) {
+  .sidebar {
     position: fixed;
     height: 100vh;
     top: 0;
@@ -102,51 +153,46 @@
     transform: translateX(-100%);
     transition: 0.3s;
   }
-  
-  
-  .open{
+
+  .open {
     transform: translateX(0);
   }
-  .toggle-btn{
+  .toggle-btn {
     display: block;
   }
-  .song-list-top{
+  .song-list-top {
     height: 95px;
   }
-  .player{
+  .player {
     position: fixed;
     bottom: 0;
     left: 0;
     padding: 0;
-    display: flex;  
-   
-   
+    display: flex;
+  }
 
-   
+  .songs {
+    height: 65vh;
   }
-  
-  .songs{
-      height: 65vh;
-  }
-  
-  .album{
+
+  .album {
     width: 90%;
     margin: auto;
   }
-  .album-detail{
+  .album-detail {
     margin: 0px;
   }
-  .album-detail h2{
+  .album-detail h2 {
     line-height: 10px;
   }
-  .album-top{
-    display:flex;
+  .album-top {
+    display: flex;
     align-items: center;
     justify-content: start;
     gap: 5px;
   }
- 
-  .player img{
+
+  .player img {
     width: 50px;
   }
 }

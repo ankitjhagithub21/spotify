@@ -3,10 +3,10 @@ import songData from "../songs.json";
 import toast from "react-hot-toast";
 
 const initialState = {
-  songs: songData,
+  songs: songData || [],
   currentSongIndex: null,
   isOpen:false,
-  favs:[],
+  favs:JSON.parse(localStorage.getItem('favSongs')) || [],
   text:"For You"
 };
 
@@ -17,6 +17,9 @@ export const songSlice = createSlice({
     setSongs: (state, action) => {
       state.songs = action.payload;
     },
+    setFavs:(state,action)=>{
+      state.favs = action.payload
+    },
     setText: (state, action) => {
       state.text = action.payload;
     },
@@ -26,17 +29,21 @@ export const songSlice = createSlice({
     setIsOpen: (state, action) => {
       state.isOpen = action.payload;
     },
-    addToFav: (state, action) => {
+    addRemoveSong: (state, action) => {
      
-      if (!state.favs.includes(action.payload)) {
+      const index = state.favs.findIndex((song)=>song.id === action.payload.id)
+      if(index<0){
         state.favs.push(action.payload);
-        toast.success("Added to favourites.")
+        toast.success("Added to favourite")
+        localStorage.setItem('favSongs',JSON.stringify(state.favs))
+      }else{
+        state.favs.splice(index,1);
+        toast.success("Remove from favourite")
+        localStorage.setItem('favSongs',JSON.stringify(state.favs))
       }
+      
     },
-    removeFromFav: (state, action) => {
-      state.favs = state.favs.filter((songId) => songId !== action.payload);
-      toast.success("Remove from favourites.")
-    },
+    
     playNextSong: (state) => {
       if (state.currentSongIndex < state.songs.length - 1) {
         state.currentSongIndex += 1;
@@ -55,6 +62,6 @@ export const songSlice = createSlice({
   },
 });
 
-export const {setSongs,setText, setCurrentSongIndex,setIsOpen ,addToFav,removeFromFav,playNextSong,playPrevSong} = songSlice.actions;
+export const {setSongs,setText, setCurrentSongIndex,setIsOpen ,addRemoveSong,playNextSong,playPrevSong,setFavs} = songSlice.actions;
 
 export default songSlice.reducer;

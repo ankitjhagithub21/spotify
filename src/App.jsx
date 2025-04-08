@@ -5,8 +5,9 @@ import { Toaster } from "react-hot-toast";
 import { useSelector } from "react-redux"; // if using Redux
 
 const App = () => {
-  const {currentSongIndex,songs} = useSelector((state) => state.song); 
+  const { currentSongIndex, songs,text,favs } = useSelector((state) => state.song);
   const currentSong = songs[currentSongIndex];
+
   return (
     <main
       className="main-container"
@@ -16,8 +17,10 @@ const App = () => {
     >
       <div className="row">
         <Toaster />
-        <Sidebar/>
-        <SongList />
+        <Sidebar />
+       {
+         text === "For You" ?  <SongList songs={songs} /> : <SongList songs={favs} /> 
+       }
         <Player />
       </div>
     </main>
