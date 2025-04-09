@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 const initialState = {
   songs: songData || [],
   currentSongIndex: 0,
-  currentSong:null,
+  currentSong:songData[0],
   isOpen:false,
   favs:JSON.parse(localStorage.getItem('favSongs')) || [],
   text:"For You"

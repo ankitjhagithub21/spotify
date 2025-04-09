@@ -12,7 +12,7 @@ const Player = () => {
     const dispatch = useDispatch();
    
     if(!currentSong){
-         return <div>No song</div>
+        return null
     }
 
     return (
@@ -29,8 +29,6 @@ const Player = () => {
                     <img src={currentSong.thumbnail} alt={currentSong.title} className='img-fluid rounded mb-2' />
 
                 </div>
-
-
 
 
                 <div className="audio-player">
