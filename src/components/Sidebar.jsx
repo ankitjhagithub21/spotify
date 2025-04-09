@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux"
 import logo from "../assets/spotify.png"
 import { IoMdClose } from "react-icons/io";
-import { setText } from "../app/songSlice";
+import { setText,setIsOpen } from "../app/songSlice";
 
 
 const Sidebar = () => {
-  const { isOpen,setIsOpen} = useSelector(state => state.song)
+  const { isOpen} = useSelector(state => state.song)
   const dispatch = useDispatch()
 
   
