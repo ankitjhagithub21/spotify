@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
-import { setCurrentSongIndex } from "../app/songSlice"
+import { setCurrentSongIndex,setCurrentSong } from "../app/songSlice"
 
 
 const Song = ({ song,index }) => {
@@ -8,7 +8,9 @@ const Song = ({ song,index }) => {
   const dispatch = useDispatch()
 
   const handleSongClick = () => {
+    dispatch(setCurrentSong(song))
      dispatch(setCurrentSongIndex(index))
+    
 
   }
   return (

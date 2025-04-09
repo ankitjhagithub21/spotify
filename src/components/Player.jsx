@@ -7,17 +7,13 @@ import 'react-h5-audio-player/lib/styles.css';
 
 
 const Player = () => {
-    const { currentSongIndex, songs, favs } = useSelector(state => state.song) || {};
+    const { currentSong, favs } = useSelector(state => state.song) || {};
 
     const dispatch = useDispatch();
-    // Placeholder data if currentSong is null
-    const songData = songs[currentSongIndex] || {
-        title: "Unknown Song",
-        artistName: "Unknown Artist",
-        musicUrl: null,
-        thumbnail: "https://placehold.co/400?text=no song found",
-        duration: "0:00"
-    };
+   
+    if(!currentSong){
+         return <div>No song</div>
+    }
 
     return (
         <div className='col-md-4 player'>
@@ -25,12 +21,12 @@ const Player = () => {
 
             <div className='album'>
                 <div className='album-detail'>
-                    <h2 className='fs-4'>{songData.title}</h2>
-                    <small>{songData.artistName}</small>
+                    <h2 className='fs-4'>{currentSong.title}</h2>
+                    <small>{currentSong.artistName}</small>
                 </div>
 
                 <div className='album-top'>
-                    <img src={songData.thumbnail} alt={songData.title} className='img-fluid rounded mb-2' />
+                    <img src={currentSong.thumbnail} alt={currentSong.title} className='img-fluid rounded mb-2' />
 
                 </div>
 
@@ -39,16 +35,16 @@ const Player = () => {
 
                 <div className="audio-player">
                     {
-                       favs.find((song)=>song.id === songData.id) ?  <FaBookmark className="bookmark-button" cursor={"pointer"} size={20} onClick={() => dispatch(addRemoveSong(songData))} /> : <FaRegBookmark  className="bookmark-button" cursor={"pointer"} size={20} onClick={() => {
-                            if (songData.id) {
-                                dispatch(addRemoveSong(songData))
+                       favs.find((song)=>song.id === currentSong.id) ?  <FaBookmark className="bookmark-button" cursor={"pointer"} size={20} onClick={() => dispatch(addRemoveSong(currentSong))} /> : <FaRegBookmark  className="bookmark-button" cursor={"pointer"} size={20} onClick={() => {
+                            if (currentSong.id) {
+                                dispatch(addRemoveSong(currentSong))
                             }
                         }} />
                     }
                     <AudioPlayer
 
                         autoPlay
-                        src={songData.musicUrl}
+                        src={currentSong.musicUrl}
                         showSkipControls={true}
                         showJumpControls={false}
                         onClickNext={() => dispatch(playNextSong())}

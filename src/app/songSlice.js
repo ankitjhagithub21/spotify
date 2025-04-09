@@ -4,7 +4,8 @@ import toast from "react-hot-toast";
 
 const initialState = {
   songs: songData || [],
-  currentSongIndex: null,
+  currentSongIndex: 0,
+  currentSong:null,
   isOpen:false,
   favs:JSON.parse(localStorage.getItem('favSongs')) || [],
   text:"For You"
@@ -25,6 +26,10 @@ export const songSlice = createSlice({
     },
     setCurrentSongIndex: (state, action) => {
       state.currentSongIndex = action.payload;
+    },
+    setCurrentSong: (state, action) => {
+
+      state.currentSong = action.payload;
     },
     setIsOpen: (state, action) => {
       state.isOpen = action.payload;
@@ -47,9 +52,11 @@ export const songSlice = createSlice({
     playNextSong: (state) => {
       if (state.currentSongIndex < state.songs.length - 1) {
         state.currentSongIndex += 1;
+        
       } else {
         state.currentSongIndex = 0; // Loop back to the first song
       }
+      state.currentSong = state.songs[state.currentSongIndex]
     },
     playPrevSong: (state) => {
       if (state.currentSongIndex > 0) {
@@ -57,11 +64,12 @@ export const songSlice = createSlice({
       } else {
         state.currentSongIndex = state.songs.length - 1; // Loop back to the last song
       }
+      state.currentSong = state.songs[state.currentSongIndex]
     }
     
   },
 });
 
-export const {setSongs,setText, setCurrentSongIndex,setIsOpen ,addRemoveSong,playNextSong,playPrevSong,setFavs} = songSlice.actions;
+export const {setSongs,setText,setCurrentSong, setCurrentSongIndex,setIsOpen ,addRemoveSong,playNextSong,playPrevSong,setFavs} = songSlice.actions;
 
 export default songSlice.reducer;
