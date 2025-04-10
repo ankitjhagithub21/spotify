@@ -127,10 +127,12 @@
 }
 .album {
   width: 75%;
+  
 }
 .album-detail {
   margin: 10px 0;
 }
+
 
 .profile-img {
   border-radius: 50%;
@@ -141,6 +143,7 @@
   bottom: 10px;
   left: 10px;
 }
+
 
 @media (max-width: 768px) {
   .sidebar {
@@ -178,9 +181,20 @@
   .album {
     width: 90%;
     margin: auto;
+    
+    
+  }
+  .album-device{
+     display: flex;
+     flex-direction: row-reverse;
+     align-items: center;
+     justify-content: start;
+     gap: 10px;
+
   }
   .album-detail {
     margin: 0px;
+    
   }
   .album-detail h2 {
     line-height: 10px;
